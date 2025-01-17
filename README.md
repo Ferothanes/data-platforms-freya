@@ -97,3 +97,78 @@ You can use the `with` statement and `open()` function to read a file line-by-li
 with open("file.txt", "r") as file:
     for line in file:
         print(line.strip())  # Removes trailing newline
+```
+
+---
+
+### f) What is a context manager and why would you need to use it?  
+A **context manager** is a way to manage resources (like files) that need setup and cleanup.  
+- It’s used with the `with` statement to ensure resources are properly released.  
+- Example:  
+  ```python
+  with open("file.txt", "r") as file:
+      data = file.read()
+  # File is automatically closed here
+  ´´´
+
+---
+
+### g) Explain the difference between try, except, else, and finally.  
+- **try**: Blocket där du skriver kod som kan orsaka ett fel.  
+- **except**: Blocket som körs om ett fel uppstår i `try`-blocket.  
+- **else**: Blocket som körs om inget fel inträffar i `try`-blocket.  
+- **finally**: Blocket som alltid körs, oavsett om ett fel uppstår eller inte.  
+
+Exempel:  
+```python
+try:
+    x = 10 / 2  # Kod som kan orsaka ett fel
+except ZeroDivisionError:
+    print("Kan inte dela med noll!")  # Körs om ett ZeroDivisionError inträffar
+else:
+    print("Divisionen lyckades!")  # Körs om inget fel inträffar
+finally:
+    print("Detta körs alltid, oavsett vad.")  # Körs alltid
+```
+
+---
+
+### h) What is the difference between ETL and ELT?  
+- **ETL (Extract, Transform, Load)**:  
+  - Data hämtas från källor (**Extract**), omvandlas för att passa det mål där den ska lagras (**Transform**), och laddas sedan in i databasen eller datalagret (**Load**).  
+  - Vanligt när transformationer behövs innan datan lagras.  
+
+- **ELT (Extract, Load, Transform)**:  
+  - Data hämtas från källor (**Extract**), laddas först in i databasen eller datalagret (**Load**), och omvandlas sedan där (**Transform**).  
+  - Vanligt i moderna dataplattformar som kan hantera stora datamängder och komplexa transformationer direkt i databasen.  
+
+**Sammanfattning**:  
+- **ETL**: Transformation sker innan laddning.  
+- **ELT**: Transformation sker efter laddning, i databasen.
+
+---
+
+### i) Differentiate between batch processing and streaming processing.  
+- **Batch processing**:  
+  - Bearbetar stora mängder data i omgångar (batcher) vid schemalagda intervaller.  
+  - Används när du kan vänta på att bearbeta data på en senare tidpunkt, som vid att generera en daglig rapport.  
+
+- **Streaming processing**:  
+  - Bearbetar data i realtid så fort den kommer in.  
+  - Används när data behöver bearbetas omedelbart, som vid att övervaka live-aktiviteter eller analysera strömmande data (t.ex. aktiekurser eller sociala medieinlägg).
+
+**Sammanfattning**:  
+- **Batch processing**: Bearbetning av stora datamängder på förbestämda tider.  
+- **Streaming processing**: Bearbetning av data i realtid, så snart den anländer.
+
+---
+
+### j) What is a data platform?  
+En **data platform** är ett system som samlar, lagrar, bearbetar och analyserar data.  
+- Den består av verktyg och teknologier för att hantera databaser, dataflöden, och analyser.  
+- Målet är att ge användare och företag möjlighet att fatta datadrivna beslut snabbt och effektivt.  
+- Exempel på data plattformar: Snowflake, Google BigQuery, eller AWS Data Lake.  
+
+**Sammanfattning**:  
+- En data platform hjälper företag att hantera och analysera data från olika källor för att fatta informerade beslut.
+
