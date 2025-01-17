@@ -31,3 +31,69 @@ Learning data platforms
 | ternary operator     | Ett kort sätt att skriva en if-sats. T.ex. `x = 10 if condition else 5` ger `x = 10` om villkoret är sant, annars `5`. |
 | json                 | Ett sätt att lagra och skicka data som ser ut som text, vanligt inom webbutveckling. T.ex. `{"name": "Alice", "age": 25}`. |
 
+
+
+---
+# 0.Theory questions
+
+### a) What are the fundamental data types in Python?  
+The fundamental data types in Python are:  
+- **int**: Whole numbers, e.g., `10`, `-5`.  
+- **float**: Decimal numbers, e.g., `3.14`, `-2.5`.  
+- **str**: Text or string, e.g., `"hello"`, `'Python'`.  
+- **bool**: Boolean values, `True` or `False`.  
+- **NoneType**: Represents the absence of a value, `None`.
+
+---
+
+### b) What is the difference between a list and a tuple in Python?  
+- **List**:  
+  - Mutable (can be changed).  
+  - Defined using square brackets, e.g., `[1, 2, 3]`.  
+  - Used when the data may need to be modified.  
+
+- **Tuple**:  
+  - Immutable (cannot be changed after creation).  
+  - Defined using parentheses, e.g., `(1, 2, 3)`.  
+  - Used when the data should remain constant.
+
+---
+
+### c) How does Python handle mutable and immutable data types?  
+- **Mutable data types**: Can be changed after creation. Examples: `list`, `dict`, `set`.  
+- **Immutable data types**: Cannot be changed after creation. Examples: `int`, `float`, `str`, `tuple`.  
+- Python handles them differently in memory:  
+  - Mutable types share references, so changes affect all references.  
+  - Immutable types create new objects when modified.
+
+---
+
+### d) Explain the difference between for and while loops and when to use one or the other.  
+- **for loop**:  
+  - Iterates over a sequence (like a list or range).  
+  - Use when you know the number of iterations in advance.  
+  - Example:  
+    ```python
+    for i in range(5):
+        print(i)  # Prints 0 to 4
+    ```
+
+- **while loop**:  
+  - Repeats as long as a condition is true.  
+  - Use when you don’t know in advance how many iterations are needed.  
+  - Example:  
+    ```python
+    x = 0
+    while x < 5:
+        print(x)
+        x += 1
+    ```
+
+---
+
+### e) How do you read a file line-by-line in Python?  
+You can use the `with` statement and `open()` function to read a file line-by-line:  
+```python
+with open("file.txt", "r") as file:
+    for line in file:
+        print(line.strip())  # Removes trailing newline
