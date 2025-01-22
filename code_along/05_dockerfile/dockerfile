@@ -1,0 +1,46 @@
+FROM python:3.13
+
+# instruction layer - where we will start in the container
+WORKDIR /app
+
+# Instruction layer - Copies everything from this folder into host system info/app
+COPY . . 
+
+# Instruction layer - installing packages (runs bash command)
+RUN pip install -r requirements.txt
+
+# instruction layer - bash command to run when container is spun up
+CMD [ "python", "main.py" ]
+
+
+
+#docker image ls - se images
+#docker image prune - tar bort images
+
+# docker build -t name_of_docker - creates docker -t tags a name
+# docker run name_of_docker - runs docker 
+
+#docker ps -a = when its created you can run this för att se info om containern, namn, id, created etc
+#docker run --name new_name image_name = byter namn 
+
+# cat filename - view inside filename 
+
+#docker run -it --rm --name 05_demo_container 05_demo_image /bin/bash
+    #-it = interaktiv
+    #--rm tas bort när containern stängs
+    # --name = ger den ett namn
+    #/bin/bash öppnar programmet 
+
+#uname - shows operationssystem, te.x. LINUX
+
+# START
+# 1. docker ps/docker image ls - view info
+# 2. docker exec -it 05_demo_container /bin/bash - go to right root 
+# 2. skriver över container - docker build -t namefile . 
+# 2. IF NOT IN CONTAINER ALREDY - docker run -it --rm --name 05_demo_container 05_demo_image /bin/bash
+# 3. docker rm cranky_engelbart - removes containers 
+# 4. pip freeze - view your container installments
+
+
+#after new update ls data - to view - python main.py
+#df.head().to_csv(data_path / "prog_book_head.csv")-- porg_book_head adderad 
