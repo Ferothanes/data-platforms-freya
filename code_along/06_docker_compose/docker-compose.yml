@@ -1,0 +1,11 @@
+services:
+  # Defines the services (containers) managed by Docker Compose
+  python-app:
+    # Service name (container will be called python-app)
+    build: . # Build the Docker image using the Dockerfile in the current directory
+    volumes:
+      # Mounts volumes to share files between the host and the container
+      - .:/app # Maps the current directory (host) to /app inside the container
+
+# container2
+#   image: ...
