@@ -1,9 +1,6 @@
 # data-platforms-freya
-Learning data platforms
 
-## Glossories
-
-
+## Glossories 0
 | terminology          | explanation                                                                 |
 | -------------------- | --------------------------------------------------------------------------- |
 | assign               | Att ge ett värde till en variabel med hjälp av `=`. T.ex. `x = 10` betyder att variabeln `x` nu har värdet 10. |
@@ -32,143 +29,48 @@ Learning data platforms
 | json                 | Ett sätt att lagra och skicka data som ser ut som text, vanligt inom webbutveckling. T.ex. `{"name": "Alice", "age": 25}`. |
 
 
+## Glossories 1
+| terminology           | explanation |
+| --------------------- | ----------- |
+| dataframe             | **Dataframe** är en tabellstruktur i Python, som är en del av **Pandas**-biblioteket. Det organiserar data i rader och kolumner, där varje kolumn kan hålla olika typer av data. Dataframes är centrala för dataanalys eftersom de gör det lätt att manipulera och utforska data. |
+| series                |**Series** är en en-dimensionell array-liknande struktur i **Pandas**, liknande en kolumn i ett dataframe. Den håller data i en sekvens med ett associerat index (etiketter) för varje värde, vilket gör den mer flexibel än en vanlig lista eller array. |
+| pandas concat         | **Pandas concat** är en funktion som låter dig sammanfoga flera dataframes eller series längs rader (axel 0) eller kolumner (axel 1). Det används ofta när du vill slå samman eller lägga till data från flera källor till ett enda dataset. |
+| pandas apply          | **Pandas apply** används för att tillämpa en funktion längs en axel i ett dataframe (rader eller kolumner). Det är särskilt användbart för att utföra komplexa operationer på data utan att skriva explicita loopar. Du kan applicera inbyggda eller egna funktioner för att manipulera eller analysera data. |
+| csv                   | **CSV** står för "Comma-Separated Values" och är ett enkelt textbaserat filformat där data representeras i tabellform, med värden separerade med kommatecken. CSV-filer används ofta för att lagra och utbyta data eftersom de är lätta att läsa och skriva. |
+| pandas isnull         | **Pandas isnull** är en funktion som används för att kontrollera om det finns saknade eller **NaN** (Not a Number) värden i ett dataframe eller series. Den returnerar ett boolean-resultat (True eller False) som visar om varje element i datasetet är saknat eller inte. Detta är avgörande för att hantera ofullständig data. |
+| masking in pandas     | **Masking i pandas** innebär att filtrera eller välja data baserat på specifika villkor. Till exempel kan du skapa en boolean mask (en True/False-villkor) för att extrahera rader eller kolumner som uppfyller ett visst kriterium, t.ex. att välja värden som är större än ett tröskelvärde. |
+| pandas transpose      | **Pandas transpose** är en metod som byter plats på rader och kolumner i ett dataframe. Denna operation är användbar när du behöver ändra orienteringen på din data eller för bättre datavisualisering. Det låter dig byta mellan rader som kolumner och vice versa. |
+| pandas value_counts() | **Pandas value_counts()** är en funktion som räknar hur ofta varje unikt värde förekommer i en kolumn eller series. Den är mycket användbar när du behöver sammanfatta eller analysera fördelningen av kategorisk data och hjälper dig förstå hur ofta varje värde förekommer. |
+| json                  | **JSON** (JavaScript Object Notation) är ett lättviktsformat för att lagra och överföra strukturerad data på ett läsbart sätt. Det är strukturerat som nyckel-värde-par och används ofta i webbapplikationer och API:er för att skicka data mellan server och klient. |
+| tabular data          | **Tabulär data** refererar till data som är organiserad i rader och kolumner, precis som i en tabell. Detta är det vanligaste sättet att representera och analysera data, särskilt i kalkylblad, databaser och dataanalysverktyg som Pandas. |
+| zero-based indexing   | **Zero-baserad indexering** är när man numrerar elementen i en lista, array eller dataframe från 0 istället för 1. Detta innebär att det första elementet har index 0, det andra elementet har index 1 och så vidare. Detta är vanligt i de flesta programmeringsspråk som Python. |
 
----
-# 0.Theory questions
 
-### a) What are the fundamental data types in Python?  
-The fundamental data types in Python are:  
-- **int**: Whole numbers, e.g., `10`, `-5`.  
-- **float**: Decimal numbers, e.g., `3.14`, `-2.5`.  
-- **str**: Text or string, e.g., `"hello"`, `'Python'`.  
-- **bool**: Boolean values, `True` or `False`.  
-- **NoneType**: Represents the absence of a value, `None`.
+## Glossories 2
+| terminology               | explanation |
+| ------------------------- | ----------- |
+| host system               | This is the physical or virtual computer that provides the power (CPU, memory, storage) for running virtual machines or containers. Think of it as the "real" computer where everything happens. |
+| virtualization            | This is the process of using software to make one physical machine act like several. It lets you run multiple systems (virtual machines or containers) on one physical computer.|
+| spin up                   | "Spinning up" means starting a new virtual machine or container. It’s like turning on a new computer or app in a virtual environment. |
+| dockerize                 | To "dockerize" an app is to put it into a Docker container. This makes it easier to run anywhere without worrying about system differences. |
+| docker build              | This command builds a Docker image from a Dockerfile. It takes the instructions in the file and creates an image (a template) for running the app inside a container. |
+| docker run                | This command starts a container from an image. It’s like turning the image (the template) into a live, running app inside a container. |
+| docker layers             | Each Docker image is made up of layers. Every change (like adding files or installing software) creates a new layer. This helps Docker save space and speed up builds by reusing parts that haven’t changed. |
+| container                 | A container is a small, isolated environment where an app can run. It includes everything the app needs (code, libraries, settings) to work anywhere, even on different computers. |
+| image                     | 	An image is a template used to create containers. It’s like a blueprint for a container, and you can think of it as a packaged version of your app with all its dependencies. |
+| docker compose up -d      | This command starts multiple containers at once, running them in the background. It’s like launching a bunch of apps from a list without seeing all the details in the terminal. |
+| docker compose up --build | This command starts the containers, but also rebuilds any images if needed (for example, if the app changed) before running them. |
+| docker compose down       | 	This stops and removes the containers and networks created by Docker Compose. It’s like cleaning up and turning everything off. |
+| docker exec -it /bin/bash | This command opens an interactive terminal inside a running container, so you can run commands inside it, just like using the terminal on your own computer. |
+| docker inspect            | This command gives you detailed information about a container or image, like how it was created or what settings it has. It’s helpful for troubleshooting or understanding how things work. |
+| docker ps                 | 	This command lists all the containers that are currently running. It’s like checking which apps are open and running right now. |
+| docker volume ls          | 	Volumes are special storage areas for containers. This command shows all the volumes that exist, which are used to keep data even when containers are stopped or deleted. |
+| docker container ls -a    | This shows all containers, even the ones that aren’t running. It's helpful for seeing containers that were started in the past but aren't active now. |
+| docker image ls -a        | 	This shows all Docker images on the system, even those that aren’t currently in use. It helps you see everything available to create containers from. |
+| docker image prune        | This command removes images that aren’t being used, helping free up space on your system by cleaning up old images. |
+| docker container prune    | Similar to the image prune command, this removes containers that have stopped and are no longer needed, saving space.|
+| tag                       | A tag is like a label for a Docker image that helps identify different versions (e.g., myapp:1.0 for version 1.0). It’s a way to manage different builds of the same image. |
+| docker rm                 | 	This command removes a stopped container from your system, cleaning it up to free space or resources. |
 
----
-
-### b) What is the difference between a list and a tuple in Python?  
-- **List**:  
-  - Mutable (can be changed).  
-  - Defined using square brackets, e.g., `[1, 2, 3]`.  
-  - Used when the data may need to be modified.  
-
-- **Tuple**:  
-  - Immutable (cannot be changed after creation).  
-  - Defined using parentheses, e.g., `(1, 2, 3)`.  
-  - Used when the data should remain constant.
-
----
-
-### c) How does Python handle mutable and immutable data types?  
-- **Mutable data types**: Can be changed after creation. Examples: `list`, `dict`, `set`.  
-- **Immutable data types**: Cannot be changed after creation. Examples: `int`, `float`, `str`, `tuple`.  
-- Python handles them differently in memory:  
-  - Mutable types share references, so changes affect all references.  
-  - Immutable types create new objects when modified.
-
----
-
-### d) Explain the difference between for and while loops and when to use one or the other.  
-- **for loop**:  
-  - Iterates over a sequence (like a list or range).  
-  - Use when you know the number of iterations in advance.  
-  - Example:  
-    ```python
-    for i in range(5):
-        print(i)  # Prints 0 to 4
-    ```
-
-- **while loop**:  
-  - Repeats as long as a condition is true.  
-  - Use when you don’t know in advance how many iterations are needed.  
-  - Example:  
-    ```python
-    x = 0
-    while x < 5:
-        print(x)
-        x += 1
-    ```
-
----
-
-### e) How do you read a file line-by-line in Python?  
-You can use the `with` statement and `open()` function to read a file line-by-line:  
-```python
-with open("file.txt", "r") as file:
-    for line in file:
-        print(line.strip())  # Removes trailing newline
-```
-
----
-
-### f) What is a context manager and why would you need to use it?  
-A **context manager** is a way to manage resources (like files) that need setup and cleanup.  
-- It’s used with the `with` statement to ensure resources are properly released.  
-- Example:  
-  ```python
-  with open("file.txt", "r") as file:
-      data = file.read()
-  # File is automatically closed here
-  ´´´
-
----
-
-### g) Explain the difference between try, except, else, and finally.  
-- **try**: Blocket där du skriver kod som kan orsaka ett fel.  
-- **except**: Blocket som körs om ett fel uppstår i `try`-blocket.  
-- **else**: Blocket som körs om inget fel inträffar i `try`-blocket.  
-- **finally**: Blocket som alltid körs, oavsett om ett fel uppstår eller inte.  
-
-Exempel:  
-```python
-try:
-    x = 10 / 2  # Kod som kan orsaka ett fel
-except ZeroDivisionError:
-    print("Kan inte dela med noll!")  # Körs om ett ZeroDivisionError inträffar
-else:
-    print("Divisionen lyckades!")  # Körs om inget fel inträffar
-finally:
-    print("Detta körs alltid, oavsett vad.")  # Körs alltid
-```
-
----
-
-### h) What is the difference between ETL and ELT?  
-- **ETL (Extract, Transform, Load)**:  
-  - Data hämtas från källor (**Extract**), omvandlas för att passa det mål där den ska lagras (**Transform**), och laddas sedan in i databasen eller datalagret (**Load**).  
-  - Vanligt när transformationer behövs innan datan lagras.  
-
-- **ELT (Extract, Load, Transform)**:  
-  - Data hämtas från källor (**Extract**), laddas först in i databasen eller datalagret (**Load**), och omvandlas sedan där (**Transform**).  
-  - Vanligt i moderna dataplattformar som kan hantera stora datamängder och komplexa transformationer direkt i databasen.  
-
-**Sammanfattning**:  
-- **ETL**: Transformation sker innan laddning.  
-- **ELT**: Transformation sker efter laddning, i databasen.
-
----
-
-### i) Differentiate between batch processing and streaming processing.  
-- **Batch processing**:  
-  - Bearbetar stora mängder data i omgångar (batcher) vid schemalagda intervaller.  
-  - Används när du kan vänta på att bearbeta data på en senare tidpunkt, som vid att generera en daglig rapport.  
-
-- **Streaming processing**:  
-  - Bearbetar data i realtid så fort den kommer in.  
-  - Används när data behöver bearbetas omedelbart, som vid att övervaka live-aktiviteter eller analysera strömmande data (t.ex. aktiekurser eller sociala medieinlägg).
-
-**Sammanfattning**:  
-- **Batch processing**: Bearbetning av stora datamängder på förbestämda tider.  
-- **Streaming processing**: Bearbetning av data i realtid, så snart den anländer.
-
----
-
-### j) What is a data platform?  
-En **data platform** är ett system som samlar, lagrar, bearbetar och analyserar data.  
-- Den består av verktyg och teknologier för att hantera databaser, dataflöden, och analyser.  
-- Målet är att ge användare och företag möjlighet att fatta datadrivna beslut snabbt och effektivt.  
-- Exempel på data plattformar: Snowflake, Google BigQuery, eller AWS Data Lake.  
-
-**Sammanfattning**:  
-- En data platform hjälper företag att hantera och analysera data från olika källor för att fatta informerade beslut.
+## Glossories 3
 

@@ -12,9 +12,9 @@
 - From a **dictionary**:
 
 ```python
-  import pandas as pd
-  data = {'Column1': [1, 2, 3], 'Column2': [4, 5, 6]}
-  df = pd.DataFrame(data)´´´
+import pandas as pd
+data = {'Column1': [1, 2, 3], 'Column2': [4, 5, 6]}
+df = pd.DataFrame(data)´´´
 
 **List of dictionaries**
 ´´´python
@@ -63,6 +63,39 @@ Example:
 ```python
 df.groupby('Column1').mean()  # Groups the DataFrame by 'Column1' and computes the mean for each group
 ```
+---
+
+### e) How do you export a pandas DataFrame into a CSV file?
+
+**Explanation:**
+Pandas provides the `to_csv()` method to write a DataFrame to a CSV file. This method allows you to specify options like whether to include the index or control the delimiter.
+
+**Answer:**
+- You can use the `to_csv()` method to export a DataFrame into a CSV file. The `index=False` argument prevents the index from being written into the CSV file.
+
+Example:
+```python
+df.to_csv('output.csv', index=False)  # Exports the DataFrame to 'output.csv' without the index
+```
+---
+
+### f) How do you save a pandas DataFrame into a DuckDB database?
+
+**Explanation:** DuckDB allows for efficient interaction with Pandas DataFrames and supports saving data into a DuckDB database directly. The duckdb package is used to save DataFrames as tables in the DuckDB database.
+
+**Answer:**
+- You can use the duckdb package to save a Pandas DataFrame into a DuckDB database. Here is an example of how to do it:
+
+**Example:**
+```python
+import duckdb
+import pandas as pd
+# Assuming you have a DataFrame df
+conn = duckdb.connect('my_database.duckdb')  # Connect to the DuckDB database (or create it)
+conn.execute("CREATE TABLE my_table AS SELECT * FROM df")  # Save DataFrame to DuckDB as a table
+conn.close()  # Close the connection
+```
+
 
 
 
