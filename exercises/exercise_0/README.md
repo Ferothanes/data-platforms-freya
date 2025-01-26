@@ -1,15 +1,13 @@
----
-# 0.Theory questions
+# 0.Theory questions - python
 
-### a) What are the fundamental data types in Python?  
+### a) What are the fundamental data types in Python?
+
 The fundamental data types in Python are:  
 - **int**: Whole numbers, e.g., `10`, `-5`.  
 - **float**: Decimal numbers, e.g., `3.14`, `-2.5`.  
 - **str**: Text or string, e.g., `"hello"`, `'Python'`.  
 - **bool**: Boolean values, `True` or `False`.  
 - **NoneType**: Represents the absence of a value, `None`.
-
----
 
 ### b) What is the difference between a list and a tuple in Python?  
 - **List**:  
@@ -26,7 +24,8 @@ The fundamental data types in Python are:
 
 ### c) How does Python handle mutable and immutable data types?  
 - **Mutable data types**: Can be changed after creation. Examples: `list`, `dict`, `set`.  
-- **Immutable data types**: Cannot be changed after creation. Examples: `int`, `float`, `str`, `tuple`.  
+- **Immutable data types**: Cannot be changed after creation. Examples: `int`, `float`, `str`, `tuple`. 
+ 
 - Python handles them differently in memory:  
   - Mutable types share references, so changes affect all references.  
   - Immutable types create new objects when modified.
