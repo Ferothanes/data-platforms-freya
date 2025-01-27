@@ -1,5 +1,32 @@
 # data-platforms-freya
 
+### **Virtual evironment**
+
+- A virtual environment isolates your Python project from the global system environment, ensuring that your project uses its own specific versions of Python and dependencies.
+This helps avoid conflicts when working on multiple projects that require different versions of packages or libraries.
+
+- If you don’t use or activate a virtual environment, you risk breaking projects, causing conflicts, and making your Python environment harder to manage. If you dont have it turned on, packages will be installed in the global Python environment, affecting all projects. This can lead to version conflicts between projects.
+
+**How to check if a virtual environment is active**
+    Look at the terminal prompt. The name of the environment(.venv) usually appears
+**Check the Python executable path:**
+    "where python" - If the path points to your virtual environment's bin or Scripts directory, your virtual environment is active. (its only where python is tho)
+    better might be **echo $VIRTUAL_ENV**
+**How to turn on a virtual environment**
+    - .\my_env\Scripts\activate
+    - If you're already in the project folder and the virtual environment is in a folder named venv: .\venv\Scripts\activate
+
+**How to turn off a virtual environment**
+    deactivate
+
+**Create ENV**
+    python -m venv .venv
+
+- (data-platforms-freya\.venv\Scripts\python.exe)
+
+
+
+
 ## Glossories 0
 | terminology          | explanation                                                                 |
 | -------------------- | --------------------------------------------------------------------------- |

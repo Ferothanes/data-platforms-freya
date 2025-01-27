@@ -1,24 +1,9 @@
-FROM python:3.13
-
-# instruction layer - where we will start in the container
-WORKDIR /app
-
-# Instruction layer - Copies everything from this folder into host system info/app
-COPY . . 
-
-# Instruction layer - installing packages (runs bash command)
-RUN pip install -r requirements.txt
-
-# instruction layer - bash command to run when container is spun up
-CMD [ "python", "main.py" ]
-
-
 #docker image ls - se images
 #docker image prune - remove unused images
 #docker container prune - removes stopped containers that are no longer needed.
 
-# docker build -t name_of_docker - creates docker -t tags a name
-# docker run name_of_docker - runs docker 
+#docker build -t name_of_docker - creates docker -t tags a name
+#docker run name_of_docker - runs docker 
 
 #docker ps -a = when its created you can run this för att se info om containern, namn, id, created etc
 #docker run --name new_name image_name = byter namn 
@@ -26,7 +11,7 @@ CMD [ "python", "main.py" ]
 #docker start <>
 #docker stop <>
 
-# cat filename - view inside filename 
+#cat filename - view inside filename 
 
 #docker run -it --rm --name 05_demo_container 05_demo_image /bin/bash
     #-it = interaktiv
