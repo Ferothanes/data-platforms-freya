@@ -1,10 +1,10 @@
-![alt text](images/image.png)
+![alt text](<images/Screenshot 2025-01-28 162335.png>)
 
 **Behövs inte consumeras direkt eftersom det ligger sparat i topics - "Consume at your own pace"**
-![alt text](images/image-1.png)
+![alt text](<images/Screenshot 2025-01-28 161746.png>)
 
 **Update inventory & leave order information**
-![alt text](images/image-2.png)
+![alt text](<images/Screenshot 2025-01-28 162654.png>)
 
 python´´´
 {
@@ -16,6 +16,5 @@ python´´´
 }
 ´´´
 
-![alt text](images/image-1.png)
+![alt text](<images/Screenshot 2025-01-28 163531.png>)
 
-![alt text](image-2.png)

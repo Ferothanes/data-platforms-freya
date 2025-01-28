@@ -1,4 +1,4 @@
-| --------------------- | ----------- |
+
 |docker ps | lists all running Docker containers. |
 |docker ps -a | lists all Docker containers, including running, stopped, and exited containers.|
 |docker image ls | lists all Docker images stored locally on your system. Shows repository name, image ID, size etc. |
@@ -16,10 +16,10 @@
 |docker run --name new_name image_name | Runs a container from image_name and assigns it a custom name (new_name).|
 |docker exec -it my_container /bin/bash | Executes a command inside a running container. The command to run inside the container (e.g., /bin/bash).|
 
+---
 
-| --------------------- | ----------- |
-|docker run -it --rm --name 05_demo_container 05_demo_image /bin/bash |
-| --------------------- | ----------- |
+**docker run -it --rm --name 05_demo_container 05_demo_image /bin/bash**
+
 | -d | **detached mode**: meaning they run in the background without attaching to the terminal.|
 |-it | Runs the container in interactive mode, allowing you to interact with it via the terminal.|
 |--rm | Automatically removes the container when it stops, keeping your system clean.|
@@ -30,14 +30,14 @@
 
 
 ### **START**
-- 1. docker ps/docker image ls - view info
-- 2. docker build -t my_image_name - Run the docker build command to create the image from the Dockerfile
-- 3. docker run -it --name my_container_name my_image_name - gives image a custom name & create and start a container from it
+1.  docker ps/docker image ls - view info
+2.  docker build -t my_image_name - Run the docker build command to create the image from the Dockerfile
+3.  docker run -it --name my_container_name my_image_name - gives image a custom name & create and start a container from it
 
 **If you want to interact with the container through a Bash shell, you can specify /bin/bash explicitly.**
-- 4. docker run -it --name my_container_name my_image_name /bin/bash
-- 5. docker rm my_container_name - removes containers 
-- 6. pip freeze - view your container installments
+- docker run -it --name my_container_name my_image_name /bin/bash
+- docker rm my_container_name - removes containers 
+- pip freeze - view your container installments
 
 
 #after new update ls data - to view - python main.py
