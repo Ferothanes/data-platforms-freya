@@ -3,47 +3,49 @@ import json  # json allows working with JSON data, including reading, writing, a
 from pprint import pprint  # pprint provides a more readable (formatted) output for complex data structures like dictionaries.
 from quixstreams import Application  # Application is part of the Quix Streams library, used to interact with Kafka streams for producing and consuming messages.
 
-# Define the path to the "data" folder by navigating up one directory from the script's current location
+# Get the absolute path to the "data" folder. .parents[1](one level up from this script)
 data_path = Path(__file__).parents[1] / "data"
 # Print the resolved path to the "data" folder to ensure it's correctly located
 print(data_path)
 
-# Open the "jokes.json" file located in the "data" folder in read mode
+# Open the "jokes.json" file and load its contents into a Python dictionary(in read mode)
 with open(data_path / "jokes.json", "r") as file:
     # Load and parse the JSON file content into a Python dictionary
     jokes = json.load(file)
 
-# Pretty-print the jokes dictionary for easier reading
+# Display the loaded jokes in a readable format(pretty-print)
 pprint(jokes)
 
 # Initialize a Quix Application to connect to a Kafka broker at localhost:9092, using the consumer group "text-splitter"
+# summerized: Set up a connection to Kafka (message broker) running on localhost
 app = Application(broker_address="localhost:9092", consumer_group="text-splitter")
 
-# Create or connect to a Kafka topic named "jokes", with JSON data as its value serializer
+# Create or connect to a Kafka topic named "jokes", that stores data in JSON format
 jokes_topic = app.topic(name="jokes", value_serializer="json")
 #print(jokes_topic)
 
 def main():  # Define the main function, which acts as the entry point for this part of the program.
-    with app.get_producer() as producer:  # Get a Kafka producer from the `app` object and use it within a context manager.
+    with app.get_producer() as producer: # Get a Kafka producer (used to send messages)
         # print(producer)  # (Optional) Uncomment this line to inspect the producer object.
 
-        for joke in jokes:  # Iterate through the list of jokes loaded from the JSON file.
+        for joke in jokes: # Loop through all jokes
             kafka_msg = jokes_topic.serialize(key=joke["joke_id"], value=joke)  
-            # Serialize the joke into a format compatible with the Kafka topic.
-            # `key` is the unique joke ID, and `value` is the full joke data.
+            # Prepare the message for Kafka (assign each joke an ID as a key)
+            # (Serialize the joke into a format compatible with the Kafka topic. # `key` is the unique joke ID, and `value` is the full joke data.)
 
             # Print the key and value of the serialized message for debugging or confirmation.
             print(f"Produces message: key = {kafka_msg.key}, value = {kafka_msg.value}")
 
+            # Sends the message to the Kafka topic "jokes"
             producer.produce(
                 topic="jokes",  # Specify the Kafka topic name where the message will be sent.
-                key=str(kafka_msg.key),  # Use the serialized key (converted to a string).
+                key=str(kafka_msg.key), # Convert the joke ID to a string
                 value=kafka_msg.value  # Use the serialized value (the joke).
-            )  # Send the message to the Kafka topic.
+            )  # Send the joke data
 
 
-
-# run this code only when executing and not when importing this module
+# Run the main function only if this script is executed directly
+# run only when executing and not when importing this module
 if __name__=="__main__":
     #pprint(jokes)
     main()

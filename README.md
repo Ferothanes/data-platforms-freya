@@ -7,6 +7,8 @@ This helps avoid conflicts when working on multiple projects that require differ
 
 - If you don’t use or activate a virtual environment, you risk breaking projects, causing conflicts, and making your Python environment harder to manage. If you dont have it turned on, packages will be installed in the global Python environment, affecting all projects. This can lead to version conflicts between projects.
 
+---
+
 **How to check if a virtual environment is active**
     Look at the terminal prompt. The name of the environment(.venv) usually appears
 **Check the Python executable path:**
@@ -24,9 +26,13 @@ This helps avoid conflicts when working on multiple projects that require differ
 
 - (data-platforms-freya\.venv\Scripts\python.exe)
 
+---
 
+**Having the newest version is not always the best because its not always supported** Therefore it might be better to have an older version GLOBALLY. Exempel:
 
+- Change installation version: **uv venv --python 3.12**
 
+---
 ## Glossories 0
 | terminology          | explanation                                                                 |
 | -------------------- | --------------------------------------------------------------------------- |
