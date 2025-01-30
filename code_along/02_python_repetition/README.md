@@ -2,7 +2,7 @@
 
 Think of __init__ as a construction worker who builds your object. Every time you create a new object, __init__ runs automatically and sets up its parts.
 
-python´´´
+python```
 class Dog:
     def __init__(self, name, age):
         self.name = name  # The dog's name
@@ -11,7 +11,7 @@ class Dog:
 my_dog = Dog("Buddy", 3)  # Creates a new dog
 print(my_dog.name)  # Output: Buddy
 print(my_dog.age)   # Output: 3
-´´´
+```
 
 **👉 What happens?**
 
@@ -25,7 +25,7 @@ print(my_dog.age)   # Output: 3
 Think of __str__ like a name tag on a person. When you print() an object, __str__ tells Python what to show so that humans can understand it.
 Example:
 
-python´´´
+python```
 class Dog:
     def __init__(self, name, age):
         self.name = name
@@ -36,7 +36,7 @@ class Dog:
 
 my_dog = Dog("Buddy", 3)
 print(my_dog)  # Output: This is Buddy, who is 3 years old.
-´´´
+```
 
 **👉 What happens?**
 
@@ -50,7 +50,7 @@ print(my_dog)  # Output: This is Buddy, who is 3 years old.
 Think of __repr__ as a detective report. It's not for humans—it’s for programmers who need to debug their code. It should describe the object in a way that can be used to recreate it later.
 Example:´
 
-python´´´
+python```
 class Dog:
     def __init__(self, name, age):
         self.name = name
@@ -61,9 +61,9 @@ class Dog:
 
 my_dog = Dog("Buddy", 3)
 print(repr(my_dog))  # Output: Dog('Buddy', 3)
-´´´
+```
 
-**👉 What happens***
+**👉 What happens**
     If you're debugging, you might want to see all details about my_dog.
     __repr__ shows "Dog('Buddy', 3)", which tells you exactly how to recreate the object if needed.
 

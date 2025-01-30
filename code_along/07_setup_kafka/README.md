@@ -1,9 +1,22 @@
 ## Vad är Apache Kafka?
 
 Apache Kafka är en **öppen källkodsplattform** som används för att hantera och bearbeta **real-time data streams**. Det används ofta för att samla in, överföra, lagra och analysera stora mängder data från olika källor i realtid.
-
 (Används i många branscher där snabb och skalbar datahantering är kritisk, som finans, e-handel, IoT och logghantering.)
 
+---
+http://localhost:9021/clusters : is related to Kafka, specifically to Kafka UI tools like Confluent Control Center or Kafdrop.
+
+If you are running Kafka inside Docker using a UI tool like Confluent Control Center, Kafdrop, or Redpanda Console, they often run on port 9021 to provide a web-based interface for managing Kafka clusters.
+How It Relates to Docker & Kafka
+
+- If you are running Kafka in Docker (using docker-compose), the UI tool is likely containerized too.
+
+### Check If It's Running
+**Try opening http://localhost:9021/clusters in your browser:**
+- If it works → You have a Kafka UI tool running.
+- If not → The service may not be running, or you might need to start it using docker-compose up -d.
+
+---
 
 ### Grundläggande funktioner
 - **Meddelandehantering (Message Broker):** Kafka fungerar som en "message broker" som tar emot data (meddelanden) från olika källor och distribuerar den till konsumenter (t.ex. applikationer).
@@ -51,8 +64,28 @@ Tänk dig att varje topic är en specifik hylla i postkontoret där posten för 
 - Flera konsumenter kan läsa från samma topic i grupper, vilket möjliggör skalbar bearbetning av data.
 
 ---
-![alt text](07_setup_kafka/images/image.png)
+![alt text](images/image.png)
 
+## YML (or YAML) stands for "YAML Ain't Markup Language". It is a human-readable data format used for configuration files.
 
+### Why Use YAML?
+- Easy to read and write (compared to JSON or XML).
+- Uses indentation instead of brackets {} or tags < >.
+- Commonly used in Docker Compose, Kubernetes, Ansible, and other tools.
+
+![alt text](images/image2.png)
+
+---
+### Quix Streams (from quixstreams import Application)
+
+Quix Streams is a real-time data streaming framework designed to work with Apache Kafka. It simplifies the process of ingesting, processing, and analyzing streaming data using Python.
+
+**What is Application in Quix Streams?**
+In Quix Streams, Application is a class that helps you connect to Kafka and interact with topics.
+
+**What Quix Streams Does**
+- Simplifies Kafka operations (producing & consuming messages).
+- Works natively with Python, making real-time data processing easier.
+- Manages data streams efficiently, handling topics, serialization, and event-driven processing.
 
 

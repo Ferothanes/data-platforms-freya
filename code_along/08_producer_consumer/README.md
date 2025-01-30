@@ -18,3 +18,21 @@ python´´´
 
 ![alt text](<images/Screenshot 2025-01-28 163531.png>)
 
+---
+
+**Lazy Evaluation:** means delaying the execution of a computation until its result is actually needed.
+
+**Key Benefits:**
+
+✅ Efficiency – Avoids unnecessary calculations.
+✅ Performance – Saves memory by computing values only when required.
+✅ Optimized Execution – Works well with large datasets and infinite sequences.
+
+
+**Eager Evaluation:** means executing a computation immediately, as soon as the expression is encountered.
+
+**Key Characteristics:**
+
+✅ Immediate execution – Computations happen right away.
+✅ Uses more memory – Stores results even if they aren’t needed.
+✅ Good for simple tasks – Avoids managing delayed execution.

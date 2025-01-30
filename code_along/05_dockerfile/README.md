@@ -12,6 +12,8 @@
 | --------------------- | ----------- |
 | docker image prune | removes unused Docker images to free up space (Images not associated with any tag). **To remove all** unused images "docker image prune -a". |
 | docker container prune | removes stopped containers that are not running. |
+| docker rmi <image-id> | removes image |
+| docker rm <container-id> | removes container |
 | --------------------- | ----------- |
 | docker build -t name_of_docker .| Builds a Docker image from the Dockerfile in the current directory and tags it with the specified name (name_of_docker).|
 | docker run name_of_docker | Runs a container from the specified image (name_of_docker).|
