@@ -1,0 +1,19 @@
+FROM python:3.9
+
+# Set the working directory inside the container
+WORKDIR /app
+
+# Copy the contents from the current directory into the /app directory of the container
+COPY . /app
+
+#Install the required Python packages (matplotlib and pandas)
+RUN pip install matplotlib pandas
+
+
+#CMD ["python", "src/os_data.py"]
+# Set the default command to run the Python script os_data.py when the container starts
+# Run the script and then KEEPS THE CONTAINER RUNNING
+CMD python src/os_data.py && tail -f /dev/null
+#-------------------------------------------------------------------------
+
+#COPY . . = command in a Dockerfile copies everything from your directory, in this case all of exercise_2
