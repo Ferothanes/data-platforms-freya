@@ -127,8 +127,8 @@ celerybeat.pid
 # SageMath parsed files
 *.sage.py
 
-# Environments
-.env
+# Environments #undvik att databas uppgifter blir offentliga
+.env 
 .venv
 env/
 venv/

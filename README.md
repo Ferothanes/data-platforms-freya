@@ -33,6 +33,10 @@ This helps avoid conflicts when working on multiple projects that require differ
 - Change installation version: **uv venv --python 3.12**
 
 ---
+
+![alt text](image.png)
+
+
 ## Glossories 0
 | terminology          | explanation                                                                 |
 | -------------------- | --------------------------------------------------------------------------- |
