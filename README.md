@@ -15,7 +15,8 @@ This helps avoid conflicts when working on multiple projects that require differ
     "where python" - If the path points to your virtual environment's bin or Scripts directory, your virtual environment is active. (its only where python is tho)
     better might be **echo $VIRTUAL_ENV**
 **How to turn on a virtual environment**
-    - .\my_env\Scripts\activate
+Navigate to the directory where your virtual environment (.venv) is located.
+    - source ./.venv/Scripts/activate
     - If you're already in the project folder and the virtual environment is in a folder named venv: .\venv\Scripts\activate
 
 **How to turn off a virtual environment**
@@ -110,4 +111,29 @@ This helps avoid conflicts when working on multiple projects that require differ
 | docker rm                 | 	This command removes a stopped container from your system, cleaning it up to free space or resources. |
 
 ## Glossories 3
+
+| Terminology             | Explanation |
+| ----------------------- | ----------- |
+| Kafka                   | A distributed event streaming platform used for building real-time data pipelines and applications. It allows multiple systems to communicate with each other using messages. |
+| Event                   | A piece of data representing something that happened, such as a user clicking a button or a sensor sending a temperature reading. |
+| Message                 | A unit of data sent between systems in Kafka, containing the event's information. |
+| Producer                | A system or application that sends messages (events) to Kafka. |
+| Consumer                | A system or application that reads messages (events) from Kafka. |
+| Topic                   | A category or channel in Kafka where messages are stored and organized. Producers send messages to topics, and consumers read from them. |
+| Publish                 | The action of sending a message to a Kafka topic. |
+| Subscribe               | The action of a consumer listening to a Kafka topic to receive messages. |
+| Sink                    | A destination where Kafka sends data, such as a database, file system, or another system. |
+| Publish-Subscribe Model | A messaging pattern where producers publish messages to topics, and multiple consumers can subscribe to receive those messages. |
+| Source System           | The original system that generates and sends data into Kafka. |
+| Partition               | A way to split a topic into smaller parts, allowing Kafka to handle large amounts of data efficiently by distributing messages across multiple brokers. |
+| Serialization           | The process of converting a message (data) into a format suitable for storage or transmission, such as JSON or Avro. |
+| Deserialization         | The process of converting a serialized message back into its original format for use by a consumer. |
+| Pull Model              | A communication pattern where consumers request (pull) data from Kafka when they are ready to process it. |
+| Push Model              | A communication pattern where data is sent (pushed) to consumers automatically as soon as it is available. Kafka uses a pull model. |
+| Client                  | An application or system that interacts with Kafka, either as a producer or consumer. |
+| Advertise               | The process of making Kafka brokers available to clients by exposing their addresses and ports. |
+| Ports Mapping           | The process of linking Kafka's internal ports to external ports so that clients can connect to it, especially when using Docker. |
+| Detached Mode           | Running a Docker container in the background without keeping the terminal session open. |
+| `docker exec -it`       | A command used to access a running Docker container and interact with it using a terminal. |
+
 

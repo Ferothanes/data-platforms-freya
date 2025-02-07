@@ -1,4 +1,26 @@
-### Useful psql commands
+## What is PostgreSQL?
+
+PostgreSQL (often called Postgres) is a powerful, open-source relational database management system **(RDBMS)**. It is known for its stability, extensibility, and compliance with SQL standards.
+
+- **SQL (Structured Query Language) – The Language**
+    - ✅ Data Querying (SELECT)
+    - ✅ Data Manipulation (INSERT, UPDATE, DELETE)
+    - ✅ Data Definition (CREATE TABLE, ALTER TABLE)
+    - ✅ Access Control (GRANT, REVOKE)
+
+- **PostgreSQL – A Specific RDBMS That Uses SQL**
+PostgreSQL (Postgres) is a relational database management system (RDBMS) that uses SQL to store, retrieve, and manipulate data.
+
+**PostgreSQL extends SQL with extra features like:**
+
+- ✅ Support for JSON & NoSQL-style data - instead of databases only storing data in tables, PostgresSQL allows semi-structured data (like txt documents) using JSON
+- ✅ Advanced indexing (GIN, BRIN, B-tree, etc.) - makes searching data much faster.
+- ✅ Stored procedures with multiple languages (PL/pgSQL, Python, etc.) - lets you write functions(stored procedures) in multiple languages, not just SQL
+- ✅ Concurrency control with MVCC (Multi-Version Concurrency Control(If multiple users are accessing the database at the same time))MVCC helps keeping multiple versions of the data. Users can read old data while new data is being updated—so there are no delays or conflicts.
+- ✅ Custom data types & extensions - Normal databases have fixed types like INTEGER, TEXT, BOOLEAN. PostgreSQL lets you create your own types!
+
+
+### Useful psql commands (PostgreSQL Command-Line Interface)
 
 | Command                   | Description                                               |
 | ------------------------- | --------------------------------------------------------- |
@@ -11,7 +33,7 @@
 | `\conninfo`               | Show current connection info (user, database, host, port) |
 | `\q`                      | Quit `psql`                                               |
 
-### Table management (DDL)
+### Table management (DDL - Data Definition Language)(ALTER-CREATE & DROP TABLE, etc)
 
 | Command                                                       | Description                          |
 | ------------------------------------------------------------- | ------------------------------------ |
@@ -25,7 +47,7 @@
 | `ALTER TABLE table_name RENAME TO new_table_name;`            | Rename a table                       |
 | `TRUNCATE TABLE table_name;`                                  | Remove all rows from a table         |
 
-### User & role management (DCL)
+### User & role management (DCL - Data Control Language)(GRANT, REVOKE, ALTER, ect)
 
 | Command                                                  | Description                         |
 | -------------------------------------------------------- | ----------------------------------- |
@@ -39,7 +61,7 @@
 | `GRANT USAGE ON SCHEMA public TO user_name;`             | Allow user to use public schema     |
 | `GRANT ALL PRIVILEGES ON TABLE table_name TO user_name;` | Grant all privileges on a table     |
 
-### Query data (DQL)
+### Query data (DQL - Data Query Language)(SELECT, JOIN, ORDER BY)
 
 | Command                                                    | Description                             |
 | ---------------------------------------------------------- | --------------------------------------- |
@@ -49,7 +71,7 @@
 | `SELECT DISTINCT column_name FROM table_name;`             | Select distinct values                  |
 | `SELECT * FROM table_name ORDER BY column_name ASC/DESC;`  | Sort results                            |
 
-### Updating & deleting data (DML)
+### Updating & deleting data (DML - Data Manipulation Language)(DELETE, INSERT, UPDATE)
 
 | Command                                                              | Description                            |
 | -------------------------------------------------------------------- | -------------------------------------- |
