@@ -1,17 +1,16 @@
-## What is PostgreSQL?
+# **What is PostgreSQL?**
 
 PostgreSQL (often called Postgres) is a powerful, open-source relational database management system **(RDBMS)**. It is known for its stability, extensibility, and compliance with SQL standards.
 
-- **SQL (Structured Query Language) – The Language**
-    - ✅ Data Querying (SELECT)
-    - ✅ Data Manipulation (INSERT, UPDATE, DELETE)
-    - ✅ Data Definition (CREATE TABLE, ALTER TABLE)
-    - ✅ Access Control (GRANT, REVOKE)
+### SQL (Structured Query Language) – The Language
+- ✅ Data Querying (SELECT)
+- ✅ Data Manipulation (INSERT, UPDATE, DELETE)
+- ✅ Data Definition (CREATE TABLE, ALTER TABLE)
+- ✅ Access Control (GRANT, REVOKE)
 
-- **PostgreSQL – A Specific RDBMS That Uses SQL**
-PostgreSQL (Postgres) is a relational database management system (RDBMS) that uses SQL to store, retrieve, and manipulate data.
+### PostgreSQL – A Specific RDBMS That Uses SQL
 
-**PostgreSQL extends SQL with extra features like:**
+PostgreSQL (Postgres) is a relational database management system (RDBMS) that uses SQL to store, retrieve, and manipulate data. PostgreSQL extends SQL with extra features like:
 
 - ✅ Support for JSON & NoSQL-style data - instead of databases only storing data in tables, PostgresSQL allows semi-structured data (like txt documents) using JSON
 - ✅ Advanced indexing (GIN, BRIN, B-tree, etc.) - makes searching data much faster.
