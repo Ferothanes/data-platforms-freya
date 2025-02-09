@@ -127,7 +127,7 @@ celerybeat.pid
 # SageMath parsed files
 *.sage.py
 
-# Environments #undvik att databas uppgifter blir offentliga
+# Environments #undvik att databas samt API-nyckel blir offentliga för andra
 .env 
 .venv
 env/
@@ -170,3 +170,6 @@ cython_debug/
 # PyPI configuration file
 .pypirc
 .DS_store
+
+#Ser till att vi INTE PUSHA kafka_data filen med massa data till github
+kafka_data

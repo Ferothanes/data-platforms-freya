@@ -38,6 +38,11 @@ Navigate to the directory where your virtual environment (.venv) is located.
 ![alt text](image.png)
 
 
+| terminology          | explanation                                                                 |
+| -------------------- | --------------------------------------------------------------------------- |
+| pip show <library> | Confirms if library is installed & information about the library |
+| pip cache purge | Clear caches from previous installations in case something got partially installed or cachede |
+
 ## Glossories 0
 | terminology          | explanation                                                                 |
 | -------------------- | --------------------------------------------------------------------------- |
@@ -70,6 +75,7 @@ Navigate to the directory where your virtual environment (.venv) is located.
 ## Glossories 1
 | terminology           | explanation |
 | --------------------- | ----------- |
+| **EDA** (Exploratory Data Analysis) | EDA is the process of analyzing and visualizing data to understand its patterns and characteristics before applying anything. Keywords:  Data Cleaning, Summary Statistics, Visualizations |
 | dataframe             | **Dataframe** är en tabellstruktur i Python, som är en del av **Pandas**-biblioteket. Det organiserar data i rader och kolumner, där varje kolumn kan hålla olika typer av data. Dataframes är centrala för dataanalys eftersom de gör det lätt att manipulera och utforska data. |
 | series                |**Series** är en en-dimensionell array-liknande struktur i **Pandas**, liknande en kolumn i ett dataframe. Den håller data i en sekvens med ett associerat index (etiketter) för varje värde, vilket gör den mer flexibel än en vanlig lista eller array. |
 | pandas concat         | **Pandas concat** är en funktion som låter dig sammanfoga flera dataframes eller series längs rader (axel 0) eller kolumner (axel 1). Det används ofta när du vill slå samman eller lägga till data från flera källor till ett enda dataset. |

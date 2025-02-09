@@ -88,4 +88,12 @@ In Quix Streams, Application is a class that helps you connect to Kafka and inte
 - Works natively with Python, making real-time data processing easier.
 - Manages data streams efficiently, handling topics, serialization, and event-driven processing.
 
+### Serializer & Deserializer
+
+- Serializer (Encoding Data for Kafka)
+    A serializer converts a Python object (like a dictionary) into a format that can be sent over a network or stored (e.g., JSON or binary). Converts Python data (e.g., a dictionary) into a format Kafka can send. **json.dumps(data)** OR **value_serializer="json"**
+
+- Deserializer (Decoding Received Data)
+    A deserializer does the opposite—it converts received data back into a Python object. It converts raw Kafka data (JSON, binary, etc.) into a Python object. **json.loads(data)** OR **value_deserializer="json"**
+
 

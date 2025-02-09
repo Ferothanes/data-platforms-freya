@@ -18,6 +18,7 @@ PostgreSQL (Postgres) is a relational database management system (RDBMS) that us
 - ✅ Concurrency control with MVCC (Multi-Version Concurrency Control(If multiple users are accessing the database at the same time))MVCC helps keeping multiple versions of the data. Users can read old data while new data is being updated—so there are no delays or conflicts.
 - ✅ Custom data types & extensions - Normal databases have fixed types like INTEGER, TEXT, BOOLEAN. PostgreSQL lets you create your own types!
 
+---
 
 ### Useful psql commands (PostgreSQL Command-Line Interface)
 
@@ -31,6 +32,8 @@ PostgreSQL (Postgres) is a relational database management system (RDBMS) that us
 | `\du`                     | List all users and roles                                  |
 | `\conninfo`               | Show current connection info (user, database, host, port) |
 | `\q`                      | Quit `psql`                                               |
+
+
 
 ### Table management (DDL - Data Definition Language)(ALTER-CREATE & DROP TABLE, etc)
 
@@ -46,6 +49,8 @@ PostgreSQL (Postgres) is a relational database management system (RDBMS) that us
 | `ALTER TABLE table_name RENAME TO new_table_name;`            | Rename a table                       |
 | `TRUNCATE TABLE table_name;`                                  | Remove all rows from a table         |
 
+
+
 ### User & role management (DCL - Data Control Language)(GRANT, REVOKE, ALTER, ect)
 
 | Command                                                  | Description                         |
@@ -60,6 +65,8 @@ PostgreSQL (Postgres) is a relational database management system (RDBMS) that us
 | `GRANT USAGE ON SCHEMA public TO user_name;`             | Allow user to use public schema     |
 | `GRANT ALL PRIVILEGES ON TABLE table_name TO user_name;` | Grant all privileges on a table     |
 
+
+
 ### Query data (DQL - Data Query Language)(SELECT, JOIN, ORDER BY)
 
 | Command                                                    | Description                             |
@@ -69,6 +76,8 @@ PostgreSQL (Postgres) is a relational database management system (RDBMS) that us
 | `SELECT COUNT(*) FROM table_name;`                         | Count number of rows                    |
 | `SELECT DISTINCT column_name FROM table_name;`             | Select distinct values                  |
 | `SELECT * FROM table_name ORDER BY column_name ASC/DESC;`  | Sort results                            |
+
+
 
 ### Updating & deleting data (DML - Data Manipulation Language)(DELETE, INSERT, UPDATE)
 
