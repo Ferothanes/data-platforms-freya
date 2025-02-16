@@ -4,12 +4,12 @@ from constants import (
     POSTGRES_HOST,
     POSTGRES_PASSWORD,
     POSTGRES_PORT,
-    POSTGRES_USER,
+    POSTGRES_USER, #parametrarna ligger i .env
 )
 
 from quixstreams.sinks.community.postgresql import PostgreSQLSink
 
-
+#parametrar för att connecta till postgres databas som är vår docker container 
 def create_postgres_sink():
     sink = PostgreSQLSink(
         host=POSTGRES_HOST,
@@ -17,13 +17,13 @@ def create_postgres_sink():
         dbname=POSTGRES_DBNAME,
         user=POSTGRES_USER,
         password=POSTGRES_PASSWORD,
-        table_name="bitcoin",
+        table_name="bitcoin", #the table created in container # psql -U postgres, \l, \c your database, \dt = shows the tables
         schema_auto_update=True,
     )
 
     return sink
 
-
+#plockar ut keys & values
 def extract_coin_data(message):
     latest_quote = message["quote"]["USD"]
     return {
@@ -32,7 +32,7 @@ def extract_coin_data(message):
         "volume": latest_quote["volume_24h"],
         "updated": message["last_updated"],
     }
-
+#Öppnar topic & gör en transformation
 def main():
     app = Application(broker_address="localhost:9092", consumer_group="coin_group", auto_offset_reset="earliest")
     coins_topic = app.topic(name = "coins", value_deserializer="json")

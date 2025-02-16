@@ -19,9 +19,6 @@ sdf.update(lambda message: print(f"Input message: {message}")) #motsvarar nedan 
                 #print(message)
             #sdf.update(print_message)
 
-#transformations
-# i want to split the words
-
 def split_words(message):
     return [word for word in message["joke_text"].split()]
 
